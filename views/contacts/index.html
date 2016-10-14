@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/css/themes/green/style.css">
+
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+
+</head>
+<body>
+<table class="tablesorter" id="contact">
+    <thead>
+    <tr>
+        <th style="width: 5%;">#</th>
+        <th style="width: 10%;">Name</th>
+        <th style="width: 8%;">Email</th>
+        <th style="width: 7%;">Message</th>
+        <th style="width: 7%;">data_time</th>
+        <th style="width: 7%;">edit_admin</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($data['messages'] as $item) { ?>
+    <tr>
+
+
+        <td><?=$item['id']?></td>
+        <td><?=$item['name']?></td>
+        <td><?=$item['email']?></td>
+        <td><?=$item['message']?></td>
+        <td><?=$item['date_time']?></td>
+        <td><?= $item['edit_admin'] ? 'yes' : 'no'  ?></td>
+
+    </tr>
+    <?php } ?>
+
+    </tbody>
+
+</table>
+<br>
+
+<form action=""  method="post">
+
+    <input type="text" class="form-control" name="name" required placeholder="Your Name"><br>
+    <input type="email" class="form-control" name="email" required placeholder="Your Email"><br>
+    <textarea name="message" class="form-control" required placeholder="Your Message"></textarea><br>
+    <button class="btn btn-success" type="submit">Отправить</button>
+
+</form>
+
+
+</body>
+</html>

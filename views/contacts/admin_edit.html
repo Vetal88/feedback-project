@@ -1,0 +1,21 @@
+<h3>Edit massage</h3><br>
+<form method="post" action="">
+    <input type="hidden" name="id" value="<?=$data['message']['id']?>">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" value="<?=$data['message']['name']?>" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email"id="email" name="email" value="<?=$data['message']['email']?>" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" class="form-control"><?=$data['message']['message']?></textarea>
+    </div>
+    <div class="form-group">
+        <label for="is_published">Publish</label>
+        <input type="checkbox" name="is_published" id="is_published" <?= $data['message']['is_published'] ? 'checked="checked"' : '' ?> >
+    </div>
+    <input type="submit" class="btn btn-success">
+</form>
